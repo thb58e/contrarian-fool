@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Open Sans', 'Lato', Arial, sans-serif;
+  font-family: Georgia, serif;
   background: #fff;
   color: #666;
 }
@@ -14,10 +14,11 @@ header {
 }
 
 .site-title {
-  font-family: 'Dancing Script', 'Pacifico', cursive;
-  font-size: 2.5rem;
-  color: #888;
+  font-family: Georgia, serif;
+  font-size: 2.8rem;
+  color: #666;
   margin: 0;
+  font-weight: bold;
   letter-spacing: 1px;
 }
 
@@ -31,9 +32,11 @@ nav {
 nav a {
   color: #888;
   text-decoration: none;
-  margin: 0 18px;
-  font-family: 'Dancing Script', 'Pacifico', cursive;
-  font-size: 1.3rem;
+  margin: 0 32px;
+  font-family: Georgia, serif;
+  font-size: 1.6rem;
+  font-style: italic;
+  letter-spacing: 1px;
   transition: color 0.2s;
 }
 
@@ -41,20 +44,27 @@ nav a:hover {
   color: #333;
 }
 
-.main-content, .content {
-  max-width: 700px;
+.main-content, .content, section, .post {
+  font-family: Georgia, serif;
+  max-width: 900px;
   margin: 0 auto;
   padding: 2rem 1rem 3rem 1rem;
   background: none;
+}
+
+h1, h2, h3, h4, h5, h6, .section-title {
+  font-family: Georgia, serif;
+  font-weight: bold;
+  color: #666;
+  margin-top: 2.5rem;
+  margin-bottom: 1.2rem;
 }
 
 .section-title {
   display: flex;
   align-items: center;
   text-align: center;
-  color: #888;
-  font-family: 'Open Sans', 'Lato', Arial, sans-serif;
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: bold;
   margin: 2.5rem 0 1.5rem 0;
 }
@@ -65,6 +75,13 @@ nav a:hover {
   flex: 1;
   border-bottom: 2px solid #e0e0e0;
   margin: 0 1rem;
+}
+
+label, .contact-form label, .contact-form p {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #666;
 }
 
 section, .post {
@@ -83,10 +100,11 @@ footer {
   padding: 2rem 0 1rem 0;
   margin-top: 3rem;
   font-size: 1rem;
+  font-family: Georgia, serif;
 }
 
 input, textarea, button {
-  font-family: inherit;
+  font-family: Georgia, serif;
   font-size: 1rem;
   color: #444;
   border: 1px solid #ccc;
@@ -104,6 +122,8 @@ button {
   border: none;
   cursor: pointer;
   transition: background 0.2s;
+  font-style: italic;
+  font-size: 1.2rem;
 }
 button:hover {
   background: #333;
@@ -117,7 +137,34 @@ button:hover {
     font-size: 1.3rem;
   }
   nav a {
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin: 0 8px;
   }
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  margin-bottom: 1.2rem;
+}
+
+.contact-form button {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;
 } 

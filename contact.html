@@ -4,35 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-    <h1>Contrarian Fool</h1>
+  <header style="position: relative;">
+    <h1 class="site-title">Contrarian Fool</h1>
+    <a href="zh/contact.html" id="lang-switch" style="position: absolute; top: 2rem; right: 2rem; font-size: 1.1rem; color: #888; text-decoration: none;">中文</a>
   </header>
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About Me</a>
-    <a href="posts/post1.html">Posts</a>
+    <a href="investment-philosophy.html">Investment Philosophy</a>
+    <a href="posts/index.html">Posts</a>
     <a href="contact.html">Contact</a>
   </nav>
-  <main class="content">
-    <h2>Contact Us</h2>
+  <section class="content">
+    <h2 class="section-title">Contact Me</h2>
     <p>Feel free to reach out to us with any questions or inquiries.</p>
-    <form>
+    <form class="contact-form">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
-      <br>
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" required>
-      <br>
       <label for="message">Message:</label>
       <textarea id="message" name="message" rows="4" required></textarea>
-      <br>
       <button type="submit">Send</button>
     </form>
-  </main>
+  </section>
   <footer>
     <p>&copy; 2025 Contrarian Fool. All rights reserved.</p>
   </footer>
