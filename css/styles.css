@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  font-family: 'Open Sans', 'Lato', Arial, sans-serif;
+  background: #fff;
+  color: #666;
+}
+
+header {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  background: none;
+  padding: 0;
+}
+
+.site-title {
+  font-family: 'Dancing Script', 'Pacifico', cursive;
+  font-size: 2.5rem;
+  color: #888;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+nav {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  background: none;
+  padding: 0;
+}
+
+nav a {
+  color: #888;
+  text-decoration: none;
+  margin: 0 18px;
+  font-family: 'Dancing Script', 'Pacifico', cursive;
+  font-size: 1.3rem;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #333;
+}
+
+.main-content, .content {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem 1rem;
+  background: none;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #888;
+  font-family: 'Open Sans', 'Lato', Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 2.5rem 0 1.5rem 0;
+}
+
+.section-title::before,
+.section-title::after {
+  content: '';
+  flex: 1;
+  border-bottom: 2px solid #e0e0e0;
+  margin: 0 1rem;
+}
+
+section, .post {
+  background: none;
+  color: #666;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  margin-bottom: 2.5rem;
+}
+
+footer {
+  text-align: center;
+  color: #bbb;
+  background: none;
+  padding: 2rem 0 1rem 0;
+  margin-top: 3rem;
+  font-size: 1rem;
+}
+
+input, textarea, button {
+  font-family: inherit;
+  font-size: 1rem;
+  color: #444;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  background: #888;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #333;
+}
+
+@media (max-width: 600px) {
+  .main-content, .content {
+    padding: 1rem 0.5rem 2rem 0.5rem;
+  }
+  .section-title {
+    font-size: 1.3rem;
+  }
+  nav a {
+    font-size: 1rem;
+    margin: 0 8px;
+  }
+} 

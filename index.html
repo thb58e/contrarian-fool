@@ -4,99 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contrarian Fool</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&family=Dancing+Script:wght@700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      line-height: 1.6;
-      background-image: url('bamboo.png');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-position: center;
-      color: #fff;
-    }
-
-    header {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 20px 40px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-family: 'Playfair Display', serif;
-    }
-
-    nav {
-      background: rgba(0, 0, 0, 0.5);
-      text-align: center;
-      padding: 10px 0;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-
-    .hero {
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .hero h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-
-    .content {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    .post {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      margin-bottom: 30px;
-      border-radius: 6px;
-    }
-
-    .post h3 {
-      margin-top: 0;
-    }
-
-    footer {
-      background: rgba(0, 0, 0, 0.6);
-      text-align: center;
-      padding: 20px;
-      margin-top: 60px;
-    }
+    /* Styles moved to styles.css */
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Contrarian Fool</h1>
+    <h1 class="site-title">Contrarian Fool</h1>
   </header>
 
   <nav>
-    <a href="#">Home</a>
-    <a href="#">About Me</a>
-    <a href="#">Posts</a>
-    <a href="#">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="posts/post1.html">Posts</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
   <section class="hero">
-    <h2>Welcome to My Blog</h2>
-    <p>I'm an investor with over 10 years of experience in the professional investment world, but at heart, I have always seen myself as a long-term business owner. I started this firm to help people make thoughtful, patient investment decisions—just like I would for my own family. I believe that investing should be simple, grounded in understanding, and always done with integrity. I focus on high-quality businesses that can grow over time, and I avoid short-term noise. My goal is to help clients build durable wealth—not through speculation, but through discipline, wisdom, and doing the right thing, quietly and consistently.</p>
+    <h2>Welcome to Contrarian Fool</h2>
+    <p>I'm an investor with over 10 years of experience in the professional investment world, but at heart, I have always seen myself as a long-term business owner, not a stock picker. I started this site to help people make thoughtful, patient investment decisions—just like I would for my own family. I believe that investing should be simple, grounded in understanding, and always done with integrity. I focus on high-quality businesses that can grow over time, and I avoid short-term noise. My goal is to help clients build durable wealth—not through speculation, but through discipline, rationality, and doing the right thing, quietly and consistently.</p>
   </section>
-  <section id="about-me" style="max-width: 700px; margin: 0 auto; padding: 2rem;">
+  <section id="about-me" style="max-width: 700px; margin: 0 auto; padding: 2rem; background-color: white;">
     <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem;">About Me</h2>
     <p style="font-size: 1.1rem; line-height: 1.6;">
       I'm an investor with over 10 years of experience in the professional investment world, but at heart, I've always seen myself as a long-term business owner.
@@ -108,19 +39,78 @@
       quietly and consistently.
     </p>
   </section>
+  <section id="investment-philosophy" style="max-width: 700px; margin: 0 auto; padding: 2rem;">
+    <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem;">Investment Philosophy</h2>
+    <p style="font-size: 1.1rem; line-height: 1.6;">
+      Investment philosophy: Invest in what you understand, stay disciplined, think long term, and let great businesses compound quietly. Key principles:
+    </p>
+    <ul style="font-size: 1.1rem; line-height: 1.6;">
+      <li><strong>1. Buy Businesses, Not Stocks</strong><br>
+        View stocks as partial ownership of real businesses.<br>
+        Focus on long-term intrinsic value, not short-term price movements.<br>
+        "Buying a stock is buying the company's discounted future cash flows."
+      </li>
+      <li><strong>2. Stay Within Your Circle of Competence</strong><br>
+        Only invest in companies you deeply understand.<br>
+        "If you don't understand it, don't touch it."<br>
+        Avoid complexity and hype — simplicity is strength.
+      </li>
+      <li><strong>3. Do the Right Thing + Do Things Right ("Benfen")</strong><br>
+        This is his core principle:<br>
+        "Do the right thing" = act ethically, invest in great businesses.<br>
+        "Do things right" = execute patiently and carefully.<br>
+        Success comes from discipline, integrity, and self-awareness, not shortcuts.
+      </li>
+      <li><strong>4. Long-Term Thinking Over Short-Term Gains</strong><br>
+        Avoid trying to make fast money — that mindset leads to mistakes.<br>
+        Great companies take time to show results.<br>
+        "Many people are poor because they want to get rich quickly."
+      </li>
+      <li><strong>5. Focus on Moats (Durable Competitive Advantages)</strong><br>
+        Invest in companies with pricing power, strong brands, or network effects.<br>
+        Businesses that can raise prices and still retain customers are likely to have a wide moat.
+      </li>
+      <li><strong>6. Be Price Sensitive, But Not Obsessive</strong><br>
+        A great business at a fair price is better than a mediocre business at a low price.<br>
+        Avoid market timing; instead, wait patiently for the right price to buy.
+      </li>
+      <li><strong>7. Rationality Over Emotion</strong><br>
+        Stay calm during volatility. Don't get swayed by market euphoria or fear.<br>
+        Check and revisit your investment thesis instead of reacting impulsively.
+      </li>
+      <li><strong>8. Invest with High Conviction</strong><br>
+        Concentrated bets are fine — if you're within your competence zone.<br>
+        "Put all your eggs in one basket — and watch that basket closely."
+      </li>
+      <li><strong>9. Avoid Overtrading</strong><br>
+        Frequent buying and selling leads to poor decisions and higher costs.<br>
+        Hold great businesses for the long run.
+      </li>
+      <li><strong>10. Keep Learning & Reflecting</strong><br>
+        Be humble. Review and learn from your mistakes.<br>
+        Continuously refine your understanding of businesses, economics, and human nature.
+      </li>
+    </ul>
+  </section>
 
-  <main class="content">
-    <div class="post">
-      <h3>First Blog Post</h3>
-      <p><em>June 11, 2025</em></p>
-      <p>This is the introduction to my blog! I'm excited to share insights about life, investing, and everything in between. Stay tuned for more.</p>
-    </div>
-
-    <div class="post">
-      <h3>Why I Started This Blog</h3>
-      <p><em>June 10, 2025</em></p>
-      <p>I've always enjoyed writing and thinking deeply. This blog is my place to explore ideas and connect with like-minded readers. </p>
-    </div>
+  <main class="main-content">
+    <section>
+      <h2 class="section-title">About Me</h2>
+      <p style="text-align:center; margin-bottom:2.5rem; color:#888;">一个放荡不羁、努力追求简单生活的人</p>
+      <h3 style="color:#888;">IT 技能</h3>
+      <p>擅长研究用户心理，可以快速从 0 到 1 构建交互体验极佳的产品<br>
+      全能选手，上到客户需求沟通、研发团队管理，下到接网线写代码…<br>
+      自学能力极强，精力旺盛，平常没事就喜欢看书玩会儿电脑</p>
+      <h3 style="color:#888;">擅长领域</h3>
+      <p>Emacs<br>Linux 操作系统<br>自驾探险</p>
+      <h3 style="color:#888;">编程语言</h3>
+      <p>顶级水准：Elisp、Vala</p>
+    </section>
+    <h2>Blog Posts</h2>
+    <ul>
+      <li><a href="posts/post1.html">First Blog Post</a></li>
+      <li><a href="posts/post2.html">Why I Started This Blog</a></li>
+    </ul>
   </main>
 
   <footer>
