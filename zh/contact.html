@@ -69,8 +69,9 @@
             formMessage.style.color = 'green';
             form.reset();
           } else {
-            formMessage.textContent = `发送失败：${data.message || '未知错误。'}`;
+            formMessage.textContent = `发送失败：${data.error || data.message || '未知错误。'}`;
             formMessage.style.color = 'red';
+            console.error('Error details:', data);
           }
         } catch (error) {
           console.error('Error:', error);

@@ -69,10 +69,11 @@
           if (response.ok && data.success) {
             formMessage.textContent = 'Message sent successfully!';
             formMessage.style.color = 'green';
-            form.reset(); // Clear the form
+            form.reset();
           } else {
-            formMessage.textContent = `Failed to send message: ${data.message || 'Unknown error.'}`;
+            formMessage.textContent = `Failed to send message: ${data.error || data.message || 'Unknown error.'}`;
             formMessage.style.color = 'red';
+            console.error('Error details:', data);
           }
         } catch (error) {
           console.error('Error:', error);

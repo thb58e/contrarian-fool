@@ -15,7 +15,7 @@
       "function": {
         "sedContactEmail": {
           "deploymentBucketName": "amplify-contrarianfool-dev-33e2d-deployment",
-          "s3Key": "amplify-builds/sedContactEmail-76576c34436e58356935-build.zip"
+          "s3Key": "amplify-builds/sedContactEmail-71386143623970544452-build.zip"
         }
       },
       "api": {

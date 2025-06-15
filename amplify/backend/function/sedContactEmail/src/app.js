@@ -48,10 +48,13 @@ app.get('/sendEmail/*', function(req, res) {
 ****************************/
 
 app.post('/sendEmail', async function(req, res) {
+  console.log('Received request:', JSON.stringify(req.body));
+  
   try {
     const { name, email, message } = req.body;
     
     if (!name || !email || !message) {
+      console.log('Missing required fields:', { name, email, message });
       return res.status(400).json({ 
         error: 'Missing required fields',
         success: false 
@@ -59,9 +62,9 @@ app.post('/sendEmail', async function(req, res) {
     }
 
     const params = {
-      Source: 'thb58e@icloud.com', // Your verified sender email
+      Source: 'thb58e@icloud.com',
       Destination: {
-        ToAddresses: ['thb58e@icloud.com'] // Your verified recipient email
+        ToAddresses: ['thb58e@icloud.com']
       },
       Message: {
         Subject: {
@@ -79,17 +82,26 @@ Message: ${message}
       }
     };
 
-    await ses.sendEmail(params).promise();
+    console.log('Sending email with params:', JSON.stringify(params));
+    
+    const result = await ses.sendEmail(params).promise();
+    console.log('Email sent successfully:', JSON.stringify(result));
     
     res.json({
       success: true,
       message: 'Email sent successfully'
     });
   } catch (error) {
-    console.error('Error sending email:', error);
+    console.error('Error details:', {
+      message: error.message,
+      code: error.code,
+      stack: error.stack
+    });
+    
     res.status(500).json({
       success: false,
-      error: 'Failed to send email'
+      error: error.message || 'Failed to send email',
+      code: error.code
     });
   }
 });
