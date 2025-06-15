@@ -27,12 +27,58 @@
       <label for="email">邮箱：</label>
       <input type="email" id="email" name="email" required>
       <label for="message">留言：</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
+      <textarea id="message" name="message" rows="8" required></textarea>
       <button type="submit">发送</button>
     </form>
+    <div id="formMessage" style="margin-top: 20px; text-align: center; font-weight: bold;"></div>
   </section>
   <footer>
     <p>&copy; 2025 逆向愚者. 保留所有权利。</p>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.querySelector('.contact-form');
+      const formMessage = document.getElementById('formMessage');
+
+      const API_ENDPOINT = 'https://iy7iocl4m7.execute-api.eu-north-1.amazonaws.com/dev';
+      const API_PATH = '/sendEmail';
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        formMessage.textContent = '正在发送消息...';
+        formMessage.style.color = '#007bff';
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        try {
+          const response = await fetch(`${API_ENDPOINT}${API_PATH}`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ name, email, message }),
+          });
+
+          const data = await response.json();
+
+          if (response.ok && data.success) {
+            formMessage.textContent = '消息发送成功！';
+            formMessage.style.color = 'green';
+            form.reset();
+          } else {
+            formMessage.textContent = `发送失败：${data.message || '未知错误。'}`;
+            formMessage.style.color = 'red';
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          formMessage.textContent = '发送消息时发生错误。请稍后重试。';
+          formMessage.style.color = 'red';
+        }
+      });
+    });
+  </script>
 </body>
 </html> 
