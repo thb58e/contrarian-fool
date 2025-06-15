@@ -12,6 +12,7 @@ See the License for the specific language governing permissions and limitations 
 const express = require('express')
 const bodyParser = require('body-parser')
 const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
+const AWS = require('aws-sdk')
 
 // declare a new express app
 const app = express()
@@ -25,6 +26,8 @@ app.use(function(req, res, next) {
   next()
 });
 
+// Initialize AWS SES
+const ses = new AWS.SES({ region: 'eu-north-1' });
 
 /**********************
  * Example get method *
@@ -44,9 +47,51 @@ app.get('/sendEmail/*', function(req, res) {
 * Example post method *
 ****************************/
 
-app.post('/sendEmail', function(req, res) {
-  // Add your code here
-  res.json({success: 'post call succeed!', url: req.url, body: req.body})
+app.post('/sendEmail', async function(req, res) {
+  try {
+    const { name, email, message } = req.body;
+    
+    if (!name || !email || !message) {
+      return res.status(400).json({ 
+        error: 'Missing required fields',
+        success: false 
+      });
+    }
+
+    const params = {
+      Source: 'thb58e@icloud.com', // Your verified sender email
+      Destination: {
+        ToAddresses: ['thb58e@icloud.com'] // Your verified recipient email
+      },
+      Message: {
+        Subject: {
+          Data: `New Contact Form Message from ${name}`
+        },
+        Body: {
+          Text: {
+            Data: `
+Name: ${name}
+Email: ${email}
+Message: ${message}
+            `
+          }
+        }
+      }
+    };
+
+    await ses.sendEmail(params).promise();
+    
+    res.json({
+      success: true,
+      message: 'Email sent successfully'
+    });
+  } catch (error) {
+    console.error('Error sending email:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to send email'
+    });
+  }
 });
 
 app.post('/sendEmail/*', function(req, res) {

@@ -1,25 +1,25 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-contrarianfool-dev-8a8b8-authRole",
-      "UnauthRoleArn": "arn:aws:iam::114605780952:role/amplify-contrarianfool-dev-8a8b8-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::114605780952:role/amplify-contrarianfool-dev-8a8b8-authRole",
+      "AuthRoleName": "amplify-contrarianfool-dev-33e2d-authRole",
+      "UnauthRoleArn": "arn:aws:iam::114605780952:role/amplify-contrarianfool-dev-33e2d-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::114605780952:role/amplify-contrarianfool-dev-33e2d-authRole",
       "Region": "eu-north-1",
-      "DeploymentBucketName": "amplify-contrarianfool-dev-8a8b8-deployment",
-      "UnauthRoleName": "amplify-contrarianfool-dev-8a8b8-unauthRole",
-      "StackName": "amplify-contrarianfool-dev-8a8b8",
-      "StackId": "arn:aws:cloudformation:eu-north-1:114605780952:stack/amplify-contrarianfool-dev-8a8b8/3c313270-48ab-11f0-8d0b-06b593cdca8d",
-      "AmplifyAppId": "d3aghso5ff1azp"
+      "DeploymentBucketName": "amplify-contrarianfool-dev-33e2d-deployment",
+      "UnauthRoleName": "amplify-contrarianfool-dev-33e2d-unauthRole",
+      "StackName": "amplify-contrarianfool-dev-33e2d",
+      "StackId": "arn:aws:cloudformation:eu-north-1:114605780952:stack/amplify-contrarianfool-dev-33e2d/34384540-49fa-11f0-92b0-0a592016a03d",
+      "AmplifyAppId": "d2u5406hqx0020"
     },
     "categories": {
       "function": {
-        "sendContactEmail": {
-          "deploymentBucketName": "amplify-contrarianfool-dev-8a8b8-deployment",
-          "s3Key": "amplify-builds/sendContactEmail-302f46306837756e6550-build.zip"
+        "sedContactEmail": {
+          "deploymentBucketName": "amplify-contrarianfool-dev-33e2d-deployment",
+          "s3Key": "amplify-builds/sedContactEmail-76576c34436e58356935-build.zip"
         }
       },
       "api": {
-        "contactFormApi": {}
+        "contactFormMessage": {}
       }
     }
   }

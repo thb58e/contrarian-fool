@@ -1,6 +1,6 @@
 {
   "api": {
-    "contactFormApi": {
+    "contactFormMessage": {
       "dependsOn": [
         {
           "attributes": [
@@ -8,7 +8,7 @@
             "Arn"
           ],
           "category": "function",
-          "resourceName": "sendContactEmail"
+          "resourceName": "sedContactEmail"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -16,26 +16,26 @@
     }
   },
   "function": {
-    "sendContactEmail": {
+    "sedContactEmail": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
   },
   "parameters": {
-    "AMPLIFY_function_sendContactEmail_deploymentBucketName": {
+    "AMPLIFY_function_sedContactEmail_deploymentBucketName": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "sendContactEmail"
+          "resourceName": "sedContactEmail"
         }
       ]
     },
-    "AMPLIFY_function_sendContactEmail_s3Key": {
+    "AMPLIFY_function_sedContactEmail_s3Key": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "sendContactEmail"
+          "resourceName": "sedContactEmail"
         }
       ]
     }

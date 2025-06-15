@@ -47,12 +47,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "sendContactEmail",
+            "sedContactEmail",
             {
               "Fn::Join": [
                 "",
                 [
-                  "sendContactEmail",
+                  "sedContactEmail",
                   "-",
                   {
                     "Ref": "env"
@@ -89,12 +89,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "contrarianfoolLambdaRoleffcc6485",
+            "contrarianfoolLambdaRole44c05fc7",
             {
               "Fn::Join": [
                 "",
                 [
-                  "contrarianfoolLambdaRoleffcc6485",
+                  "contrarianfoolLambdaRole44c05fc7",
                   "-",
                   {
                     "Ref": "env"

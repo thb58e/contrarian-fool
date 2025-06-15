@@ -3,7 +3,7 @@
   "paths": {
     "/sendEmail": {
       "name": "/sendEmail",
-      "lambdaFunction": "sendContactEmail",
+      "lambdaFunction": "sedContactEmail",
       "permissions": {
         "setting": "open"
       }
