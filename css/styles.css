@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-family: 'Playfair Display', serif;
   background: #fff;
   color: black;
   display: flex;
@@ -10,6 +10,7 @@ body {
   background-size: auto;
   background-repeat: repeat;
   background-position: center center;
+  letter-spacing: 1px;
 }
 
 header {
@@ -40,7 +41,7 @@ nav a {
   color: black;
   text-decoration: none;
   margin: 0 32px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1.6rem;
   font-style: italic;
   letter-spacing: 1px;
@@ -52,7 +53,7 @@ nav a:hover {
 }
 
 .main-content, .content, section, .post {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-family: 'Playfair Display', serif;
   max-width: 900px;
   margin: 0 auto;
   padding: 2rem 1rem 3rem 1rem;
@@ -61,7 +62,7 @@ nav a:hover {
 }
 
 h1, h2, h3, h4, h5, h6, .section-title {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-family: 'Playfair Display', serif;
   font-weight: bold;
   color: black;
   margin-top: 2.5rem;
@@ -86,7 +87,7 @@ h1, h2, h3, h4, h5, h6, .section-title {
 }
 
 label, .contact-form label, .contact-form p {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-family: 'Playfair Display', serif;
   font-style: italic;
   font-size: 1.2rem;
   color: black;
@@ -108,12 +109,12 @@ footer {
   padding: 2rem 0 1rem 0;
   margin-top: 3rem;
   font-size: 1rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-family: 'Playfair Display', serif;
   flex-shrink: 0;
 }
 
 input, textarea, button {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1rem;
   color: black;
   border: 1px solid #ccc;
@@ -204,4 +205,8 @@ html, body {
   color: #000;
   margin-top: 2.5rem;
   margin-bottom: 1.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
 } 
