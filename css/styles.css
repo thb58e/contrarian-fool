@@ -787,4 +787,27 @@ html {
 
 body, html, main, .main-content {
   overflow: visible !important;
+}
+
+.lang-switcher {
+  position: absolute;
+  top: 1.2rem;
+  right: 2.2rem;
+  z-index: 100;
+  font-size: 1.1rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.lang-btn {
+  color: #2e5d3a;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.2rem 0.7rem;
+  border-radius: 5px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.lang-btn:hover {
+  background: #e6f0ec;
+  color: #17422a;
 } 
