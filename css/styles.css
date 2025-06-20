@@ -644,7 +644,7 @@ html {
   padding: 0 1.5rem;
   font-family: 'Playfair Display', serif;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
   position: sticky;
@@ -654,28 +654,39 @@ html {
   box-shadow: 0 2px 12px rgba(0,0,0,0.04);
 }
 
+.site-logo {
+  height: 48px;
+  width: auto;
+  margin-right: 1.2rem;
+  display: block;
+}
+
 .site-title {
-  font-size: 3rem;
+  font-size: 2.2rem;
   font-weight: bold;
   color: #2e5d3a;
   letter-spacing: 0.5px;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
+  margin-right: 2.5rem;
+  white-space: nowrap;
 }
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 2.8rem;
   flex-wrap: wrap;
+  margin-left: auto;
 }
 
 .nav-links a {
   text-decoration: none;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.08rem;
+  font-weight: bold;
   text-transform: uppercase;
-  color: #1a1a1a;
-  letter-spacing: 1px;
+  color: #111;
+  letter-spacing: 2.5px;
   transition: color 0.3s ease;
+  padding: 0 0.2rem;
 }
 
 .nav-links a:hover {
@@ -691,13 +702,15 @@ html {
   .site-title {
     text-align: left;
     margin-bottom: 0.5rem;
-    font-size: 2.2rem;
+    font-size: 1.5rem;
+    margin-right: 1.2rem;
   }
   .nav-links {
     gap: 1.2rem;
     width: 100%;
     justify-content: flex-start;
     margin-bottom: 0.5rem;
+    margin-left: 0;
   }
 }
 
@@ -710,7 +723,8 @@ html {
   .site-title {
     text-align: center;
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+    margin-right: 0;
   }
   .nav-links {
     flex-direction: column;
@@ -718,6 +732,7 @@ html {
     gap: 0.7rem;
     width: 100%;
     margin-bottom: 0.5rem;
+    margin-left: 0;
   }
   .nav-links a {
     font-size: 1rem;
