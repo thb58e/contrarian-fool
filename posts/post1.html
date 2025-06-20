@@ -7,14 +7,27 @@
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
 <body>
+  <header class="site-header">
+    <img src="../logo.png" alt="Contrarian Fool Logo" class="site-logo" />
+    <div class="site-title">Contrarian Fool</div>
+    <div style="flex-basis: 100%; height: 0;"></div>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <nav class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#principles">Principles</a>
+      <a href="../index.html#philosophy">Philosophy</a>
+      <a href="../index.html#posts">Posts</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
   <section class="blog-post">
     <div class="blog-post-header">
       <h1>Just be useful</h1>
       <div class="blog-post-meta">Published on June 20, 2025 · 6 min read</div>
     </div>
     <blockquote>
-      “Try to be useful and have a positive net contribution to the society.”<br>
-      “It's hard to be useful. If you're living a useful life, it's a life worth having lived.”<br>
+      "Try to be useful and have a positive net contribution to the society."<br>
+      "It's hard to be useful. If you're living a useful life, it's a life worth having lived."<br>
       — Elon Musk
     </blockquote>
     <p>Success is often measured in money, fame, or power. But at its core, real success—meaningful, lasting success—is about being useful. It's about creating value for others, whether in business, investing, or everyday life. The people who truly make an impact aren't just those who chase personal gain; they're the ones who build, teach, and contribute in ways that make life better for others.</p>
@@ -49,5 +62,22 @@
     <p>Whether in your work, your relationships, or your long-term goals, what's one thing you can do to provide real value to someone else?</p>
     <p>Because in the end, the people who make the biggest impact—the ones who are remembered, respected, and truly successful—aren't the ones who take the most. They're the ones who give the most.</p>
   </section>
+  <script>
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.site-header');
+      if (window.scrollY > 10) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    const toggleButton = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (toggleButton && navLinks) {
+      toggleButton.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
+  </script>
 </body>
 </html> 
