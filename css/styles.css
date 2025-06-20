@@ -811,4 +811,17 @@ body, html, main, .main-content {
 .lang-btn:hover {
   background: #e6f0ec;
   color: #17422a;
+}
+
+.blog-post {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+section[id] {
+  scroll-margin-top: 90px;
 } 
