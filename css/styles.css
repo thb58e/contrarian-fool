@@ -650,8 +650,15 @@ html {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255,255,255,0.97);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.site-header.scrolled {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 1rem 1.5rem;
+  opacity: 0.95;
 }
 
 .site-logo {
@@ -693,6 +700,15 @@ html {
   color: #2e5d3a;
 }
 
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  margin-left: auto;
+}
+
 @media (max-width: 900px) {
   .site-header {
     flex-direction: column;
@@ -727,15 +743,17 @@ html {
     margin-right: 0;
   }
   .nav-links {
+    display: none;
     flex-direction: column;
-    align-items: center;
-    gap: 0.7rem;
     width: 100%;
-    margin-bottom: 0.5rem;
-    margin-left: 0;
+    text-align: center;
+    background-color: #fff;
+    margin-top: 1rem;
   }
-  .nav-links a {
-    font-size: 1rem;
-    padding: 0.3rem 0;
+  .nav-links.open {
+    display: flex;
+  }
+  .nav-toggle {
+    display: block;
   }
 } 

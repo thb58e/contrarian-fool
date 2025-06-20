@@ -22,6 +22,7 @@
   <header class="site-header">
     <img src="logo.png" alt="Contrarian Fool Logo" class="site-logo" />
     <div class="site-title">Contrarian Fool</div>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
     <nav class="nav-links">
       <a href="#about">About</a>
       <a href="#principles">Principles</a>
@@ -261,6 +262,24 @@
         }
       });
     });
+  </script>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.site-header');
+      if (window.scrollY > 10) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    const toggleButton = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (toggleButton && navLinks) {
+      toggleButton.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
   </script>
 
 </body>
