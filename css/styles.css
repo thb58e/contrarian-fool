@@ -267,4 +267,19 @@ blockquote.investor-quote cite {
 
 html {
   scroll-behavior: smooth;
+}
+
+.principle-list {
+  list-style-type: disc;
+  padding-left: 2.2rem;
+  margin: 0;
+}
+
+.principle-list li {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 2.1;
+  color: #222;
+  margin-bottom: 0.5rem;
 } 
