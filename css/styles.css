@@ -20,7 +20,10 @@ header {
   padding-left: 2rem;
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
-  background: none;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .site-title {
@@ -38,7 +41,10 @@ nav {
   gap: 3.5rem;
   padding: 1.5rem 0 2.5rem 0;
   border-bottom: 1.5px solid #e0e0e0;
-  background: none;
+  background: #fff;
+  position: sticky;
+  top: 96px;
+  z-index: 999;
 }
 
 nav a {
@@ -64,6 +70,7 @@ nav a:hover {
   padding: 0 1rem 4rem 1rem;
   background: none;
   flex: 1 0 auto;
+  margin-top: 32px;
 }
 
 .section-title {
@@ -309,9 +316,46 @@ html {
 
 .principles-section {
   max-width: 800px;
-  margin: 0 auto;
-  padding: 3rem 1rem;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
   font-family: 'Playfair Display', serif;
+}
+
+.principles-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #2e5d3a;
+}
+
+.principles-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.principle-card {
+  border-left: 4px solid #2e5d3a;
+  padding: 1rem 1.25rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.principle-card strong {
+  display: block;
+  font-size: 1.25rem;
+  color: #1a3e2e;
+  margin-bottom: 0.5rem;
+}
+
+.principle-card p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.6;
 }
 
 .principles-heading {
@@ -347,4 +391,247 @@ html {
 
 .principle span {
   color: #555;
+}
+
+.about-section {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  font-family: 'Playfair Display', serif;
+}
+
+.about-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #2e5d3a;
+}
+
+.about-section p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.about-subheading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #2e5d3a;
+}
+
+.principles-list {
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.principles-list li {
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.about-section strong {
+  font-weight: 600;
+  color: #1a3e2e;
+}
+
+.about-section em {
+  font-style: italic;
+  color: #555;
+}
+
+.philosophy-section {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  font-family: 'Playfair Display', serif;
+}
+
+.philosophy-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #2e5d3a;
+}
+
+.highlight {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1a3e2e;
+  background-color: #f0f4f1;
+  border-left: 4px solid #2e5d3a;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 6px;
+}
+
+.philosophy-section h3 {
+  font-size: 1.3rem;
+  color: #1a3e2e;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-left: 1.25rem;
+}
+
+.philosophy-section p {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+  color: #444;
+  padding-left: 1.25rem;
+}
+
+.philosophy-section ul {
+  padding-left: 2rem;
+  margin-top: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.philosophy-section li {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+.investor-block {
+  margin-top: 2rem;
+}
+
+.investor-block h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1a3e2e;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.3rem;
+}
+
+.investor-block blockquote {
+  margin: 1rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid #ccc;
+  color: #555;
+  font-style: italic;
+}
+
+.blog-posts-section {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  font-family: 'Playfair Display', serif;
+}
+
+.blog-posts-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #2e5d3a;
+}
+
+.blog-posts-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.blog-posts-list li {
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+  padding-left: 1rem;
+  border-left: 4px solid #2e5d3a;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 6px;
+  color: #1a3e2e;
+  transition: background 0.3s;
+}
+
+.blog-posts-list li:hover {
+  background-color: #f1f6f3;
+}
+
+.contact-section {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  font-family: 'Playfair Display', serif;
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2e5d3a;
+  margin-bottom: 1rem;
+}
+
+.contact-section p {
+  font-size: 1.15rem;
+  color: #444;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #1a3e2e;
+  font-size: 1.05rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  transition: border 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #2e5d3a;
+  outline: none;
+  background-color: #fff;
+}
+
+.contact-form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.contact-form button {
+  background-color: #2e5d3a;
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-family: inherit;
+  letter-spacing: 0.5px;
+}
+
+.contact-form button:hover {
+  background-color: #244d2c;
 } 
