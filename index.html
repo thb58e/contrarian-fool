@@ -19,18 +19,16 @@
 </head>
 <body>
 
-  <header style="position: relative; display: flex; align-items: center; justify-content: flex-start; gap: 2.5rem; padding-left: 2rem;">
-    <img src="logo.png" alt="Site Logo" style="height: 48px; width: auto; display: block; margin-right: 1.5rem;" />
-    <h1 class="site-title" style="margin: 0;">Contrarian Fool</h1>
+  <header class="site-header">
+    <div class="site-title">Contrarian Fool</div>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#principles">Principles</a>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#posts">Posts</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
-
-  <nav>
-    <a href="#about">About</a>
-    <a href="#principles">Principles</a>
-    <a href="#philosophy">Philosophy</a>
-    <a href="#posts">Posts</a>
-    <a href="#contact">Contact</a>
-  </nav>
 
   <main class="main-content">
     <section id="about" class="about-section">
@@ -85,7 +83,7 @@
       <div class="principles-list-container">
         <div class="principle-card">
           <strong>No BS</strong>
-          <p>Be honest, clear, and direct. Don't chase hype. Don't sugarcoat risks.</p>
+          <p>Be honest. Stay rational. Don't chase hype. Don't sugarcoat risks.</p>
         </div>
         <div class="principle-card">
           <strong>No Leverage</strong>
@@ -201,8 +199,7 @@
     <section id="posts" class="blog-posts-section">
       <h2>All Blog Posts</h2>
       <ul class="blog-posts-list">
-        <li>What is the single most important thing in life and investing?</li>
-        <li>Be useful: the true measure of success</li>
+        <li><a href="posts/post1.html">Just be Useful</a></li>
       </ul>
     </section>
 
