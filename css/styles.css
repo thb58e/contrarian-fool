@@ -230,12 +230,16 @@ html, body {
   margin-bottom: 2em;
 }
 
-.post-body p, .post-body ul {
+.blog-post p, .blog-post ul {
   font-family: 'Inter', sans-serif;
   font-size: 1.4rem;
   line-height: 1.8;
   color: #333;
   margin-bottom: 1.5em;
+}
+
+.blog-post h2 {
+  font-size: 1.6rem;
 }
 
 .post-body h3 {
