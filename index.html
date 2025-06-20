@@ -211,7 +211,7 @@
     <section id="posts" class="blog-posts-section">
       <h2>All Blog Posts</h2>
       <ul class="blog-posts-list">
-        <li><a href="posts/post1.html">Just be useful</a></li>
+        <li><a href="posts/post1.html" id="post1-link">Loading...</a></li>
       </ul>
     </section>
 
@@ -290,6 +290,29 @@
         navLinks.classList.toggle('open');
       });
     }
+  </script>
+
+  <script>
+    // Auto-update blog post title from the linked post's <title>
+    document.addEventListener('DOMContentLoaded', function() {
+      const postLink = document.getElementById('post1-link');
+      if (postLink) {
+        fetch(postLink.getAttribute('href'))
+          .then(response => response.text())
+          .then(html => {
+            const doc = new DOMParser().parseFromString(html, 'text/html');
+            const title = doc.querySelector('title');
+            if (title) {
+              postLink.textContent = title.textContent;
+            } else {
+              postLink.textContent = 'Untitled Post';
+            }
+          })
+          .catch(() => {
+            postLink.textContent = 'Post unavailable';
+          });
+      }
+    });
   </script>
 
 </body>
