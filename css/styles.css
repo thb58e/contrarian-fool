@@ -305,4 +305,46 @@ html {
 
 .principle-card span {
   color: #555;
+}
+
+.principles-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.principles-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.principles-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .principles-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.principle {
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #2d2d2d;
+  background-color: #f9f9f9;
+}
+
+.principle strong {
+  font-weight: bold;
+  font-size: 1.15em;
+}
+
+.principle span {
+  color: #555;
 } 
