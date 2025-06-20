@@ -232,14 +232,14 @@ html, body {
 
 .blog-post p, .blog-post ul {
   font-family: 'Inter', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   line-height: 1.8;
   color: #333;
   margin-bottom: 1.5em;
 }
 
 .blog-post h2 {
-  font-size: 1.6rem;
+  font-size: 1.35rem;
 }
 
 .post-body h3 {
@@ -836,7 +836,7 @@ section[id] {
 
 .hero-statement {
   font-family: 'Inter', sans-serif;
-  font-size: 2.3rem;
+  font-size: 2.0rem;
   font-weight: 400;
   text-align: center;
   line-height: 1.4;
