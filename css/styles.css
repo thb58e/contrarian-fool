@@ -29,11 +29,16 @@ header {
 }
 
 .site-title {
-  font-size: 2.4rem;
-  color: #111;
-  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 3.2rem;
   font-weight: bold;
-  letter-spacing: 1px;
+  color: #2e5d3a;
+  letter-spacing: 0.5px;
+  margin: 1.2rem 0 0.5rem 0;
+  font-family: 'Playfair Display', serif;
+  background: none;
+  position: static;
 }
 
 nav {
@@ -367,11 +372,11 @@ html {
 }
 
 .principles-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  font-size: 1.2rem;
-  line-height: 1.6;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+  column-count: 1 !important;
+  display: block;
+  width: 100%;
 }
 
 .principle {
@@ -423,6 +428,9 @@ html {
 .principles-list {
   padding-left: 1.5rem;
   list-style-type: disc;
+  column-count: 1 !important;
+  display: block;
+  width: 100%;
 }
 
 .principles-list li {
@@ -633,19 +641,19 @@ html {
 }
 
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background-color: #fff;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
   max-width: 1100px;
   margin: 0 auto;
-  padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+  padding: 1.2rem 1.5rem 0.5rem 1.5rem;
   font-family: 'Playfair Display', serif;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
   transition: all 0.3s ease;
 }
 
@@ -656,17 +664,6 @@ html {
   display: block;
   vertical-align: middle;
   object-fit: contain;
-}
-
-.site-title {
-  font-size: 2.8rem;
-  font-weight: bold;
-  color: #2e5d3a;
-  letter-spacing: 0.5px;
-  margin-bottom: 0;
-  margin-right: 3rem;
-  white-space: nowrap;
-  font-family: 'Playfair Display', serif;
 }
 
 .nav-links {
@@ -693,12 +690,20 @@ html {
 }
 
 .nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.8rem;
+  background-color: transparent;
+  color: #2e5d3a;
+  border: 1px solid #2e5d3a;
+  border-radius: 6px;
+  padding: 0.5rem;
+  font-size: 2rem;
   cursor: pointer;
   margin-left: auto;
+  display: none;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+.nav-toggle:hover {
+  background-color: #e6f0ec;
 }
 
 @media (max-width: 900px) {
@@ -744,13 +749,6 @@ html {
   }
   .nav-toggle {
     display: block;
-    font-size: 2rem;
-    margin-left: auto;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1100;
-    padding: 0.3rem 0.7rem;
   }
   .nav-links {
     position: absolute;
