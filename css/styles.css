@@ -242,6 +242,15 @@ html, body {
   font-size: 1.35rem;
 }
 
+.post-subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-style: italic;
+}
+
 .post-body h3 {
   font-family: 'Inter', sans-serif;
   font-size: 1.8rem;
