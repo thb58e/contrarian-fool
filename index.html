@@ -240,7 +240,8 @@
     <section id="posts" class="blog-posts-section">
       <h2>All Blog Posts</h2>
       <ul class="blog-posts-list">
-        <li><a href="posts/post1.html" id="post1-link">Loading...</a></li>
+        <li><a href="posts/post1.html">Loading...</a></li>
+        <li><a href="posts/post2.html">Loading...</a></li>
       </ul>
     </section>
 
@@ -322,25 +323,27 @@
   </script>
 
   <script>
-    // Auto-update blog post title from the linked post's <h1>
+    // Auto-update blog post titles from linked posts' <h1> tags
     document.addEventListener('DOMContentLoaded', function() {
-      const postLink = document.getElementById('post1-link');
-      if (postLink) {
-        fetch(postLink.getAttribute('href'))
-          .then(response => response.text())
-          .then(html => {
-            const doc = new DOMParser().parseFromString(html, 'text/html');
-            const h1 = doc.querySelector('h1');
-            if (h1) {
-              postLink.textContent = h1.textContent;
-            } else {
-              postLink.textContent = 'Untitled Post';
-            }
-          })
-          .catch(() => {
-            postLink.textContent = 'Post unavailable';
-          });
-      }
+      const postLinks = document.querySelectorAll('.blog-posts-list a');
+      postLinks.forEach(postLink => {
+        if (postLink) {
+          fetch(postLink.getAttribute('href'))
+            .then(response => response.text())
+            .then(html => {
+              const doc = new DOMParser().parseFromString(html, 'text/html');
+              const h1 = doc.querySelector('h1');
+              if (h1) {
+                postLink.textContent = h1.textContent;
+              } else {
+                postLink.textContent = 'Untitled Post';
+              }
+            })
+            .catch(() => {
+              postLink.textContent = 'Post unavailable';
+            });
+        }
+      });
     });
   </script>
 
