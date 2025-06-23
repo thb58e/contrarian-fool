@@ -853,4 +853,90 @@ section[id] {
   max-width: 900px;
   margin: 0 auto;
   text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.substack-style {
+  max-width: 700px;
+  margin: 3.5rem auto 4rem auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.07);
+  padding: 3.5rem 2.2rem 3rem 2.2rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.18rem;
+  line-height: 1.85;
+  color: #232323;
+}
+
+.substack-style h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.01em;
+  color: #181818;
+  text-align: left;
+}
+
+.substack-style .post-subtitle {
+  font-size: 1.25rem;
+  color: #666;
+  margin-top: -0.7rem;
+  margin-bottom: 2.2rem;
+  text-align: left;
+  font-style: italic;
+}
+
+.substack-style h2 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin-top: 2.8rem;
+  margin-bottom: 1.1rem;
+  color: #1a3e2e;
+  letter-spacing: -0.01em;
+}
+
+.substack-style h3 {
+  font-size: 1.18rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.7rem;
+  color: #2e5d3a;
+}
+
+.substack-style p {
+  margin-bottom: 1.6em;
+  color: #232323;
+}
+
+.substack-style ul {
+  margin: 1.2em 0 1.6em 2.2em;
+  padding: 0;
+  font-size: 1.13rem;
+}
+
+.substack-style li {
+  margin-bottom: 0.7em;
+  line-height: 1.7;
+}
+
+.substack-style blockquote {
+  border-left: 4px solid #e0e0e0;
+  background: #f7f7f7;
+  color: #444;
+  font-style: italic;
+  margin: 1.8em 0 1.8em 0;
+  padding: 1.1em 1.5em;
+  font-size: 1.13rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.substack-style .highlight {
+  font-size: 1.22rem;
+  font-weight: 600;
+  color: #1a3e2e;
+  background: #f4f6f8;
+  border-left: 4px solid #2e5d3a;
+  padding: 1.1em 1.5em;
+  margin-bottom: 2.2em;
+  border-radius: 0 8px 8px 0;
 } 
