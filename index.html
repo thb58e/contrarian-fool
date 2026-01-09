@@ -4,8 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contrarian Fool</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&family=Dancing+Script:wght@700&family=Pacifico&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -237,6 +238,7 @@
         <textarea id="message" name="message" required></textarea>
         <button type="submit">Send</button>
       </form>
+      <div id="formMessage" class="form-message" role="alert" aria-live="polite"></div>
     </section>
   </main>
 
@@ -248,37 +250,112 @@
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.querySelector('.contact-form');
       const formMessage = document.getElementById('formMessage');
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const messageInput = document.getElementById('message');
+      const submitButton = form.querySelector('button[type="submit"]');
       const API_ENDPOINT = 'https://iy7iocl4m7.execute-api.eu-north-1.amazonaws.com/dev';
       const API_PATH = '/sendEmail';
 
+      // Validation functions
+      function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      function showFieldError(input, message) {
+        input.classList.add('error');
+        input.classList.remove('success');
+        let errorEl = input.nextElementSibling;
+        if (!errorEl || !errorEl.classList.contains('field-error')) {
+          errorEl = document.createElement('span');
+          errorEl.className = 'field-error';
+          input.parentNode.insertBefore(errorEl, input.nextSibling);
+        }
+        errorEl.textContent = message;
+      }
+
+      function clearFieldError(input) {
+        input.classList.remove('error');
+        const errorEl = input.nextElementSibling;
+        if (errorEl && errorEl.classList.contains('field-error')) {
+          errorEl.remove();
+        }
+      }
+
+      function showFormMessage(type, text) {
+        formMessage.className = `form-message show ${type}`;
+        formMessage.textContent = text;
+      }
+
+      function hideFormMessage() {
+        formMessage.className = 'form-message';
+        formMessage.textContent = '';
+      }
+
+      // Clear errors on input
+      [nameInput, emailInput, messageInput].forEach(input => {
+        input.addEventListener('input', () => clearFieldError(input));
+      });
+
       form.addEventListener('submit', async (event) => {
         event.preventDefault();
-        formMessage.textContent = 'Sending message...';
-        formMessage.style.color = '#007bff';
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
+
+        // Clear previous errors and messages
+        [nameInput, emailInput, messageInput].forEach(clearFieldError);
+        hideFormMessage();
+
+        // Validate
+        let isValid = true;
+        if (nameInput.value.trim().length < 2) {
+          showFieldError(nameInput, 'Name must be at least 2 characters');
+          isValid = false;
+        }
+        if (!validateEmail(emailInput.value)) {
+          showFieldError(emailInput, 'Please enter a valid email address');
+          isValid = false;
+        }
+        if (messageInput.value.trim().length < 10) {
+          showFieldError(messageInput, 'Message must be at least 10 characters');
+          isValid = false;
+        }
+
+        if (!isValid) return;
+
+        // Show loading state
+        submitButton.disabled = true;
+        const originalText = submitButton.textContent;
+        submitButton.textContent = 'Sending...';
+        showFormMessage('loading', 'Sending your message...');
 
         try {
           const response = await fetch(`${API_ENDPOINT}${API_PATH}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, email, message }),
+            body: JSON.stringify({
+              name: nameInput.value.trim(),
+              email: emailInput.value.trim(),
+              message: messageInput.value.trim()
+            }),
           });
           const data = await response.json();
+
           if (response.ok && data.success) {
-            formMessage.textContent = 'Message sent successfully!';
-            formMessage.style.color = 'green';
+            showFormMessage('success', 'Message sent successfully! We\'ll get back to you soon.');
             form.reset();
+            [nameInput, emailInput, messageInput].forEach(input => {
+              input.classList.add('success');
+              setTimeout(() => input.classList.remove('success'), 3000);
+            });
           } else {
-            formMessage.textContent = `Failed to send message: ${data.error || data.message || 'Unknown error.'}`;
-            formMessage.style.color = 'red';
+            showFormMessage('error', data.error || data.message || 'Failed to send message. Please try again.');
             console.error('Error details:', data);
           }
         } catch (error) {
           console.error('Error:', error);
-          formMessage.textContent = 'An error occurred while sending the message. Please try again later.';
-          formMessage.style.color = 'red';
+          showFormMessage('error', 'An error occurred. Please try again later.');
+        } finally {
+          submitButton.disabled = false;
+          submitButton.textContent = originalText;
         }
       });
     });
@@ -308,6 +385,7 @@
       const postLinks = document.querySelectorAll('.blog-posts-list a');
       postLinks.forEach(postLink => {
         if (postLink) {
+          postLink.setAttribute('data-loading', 'true');
           fetch(postLink.getAttribute('href'))
             .then(response => response.text())
             .then(html => {
@@ -321,8 +399,35 @@
             })
             .catch(() => {
               postLink.textContent = 'Post unavailable';
+            })
+            .finally(() => {
+              postLink.removeAttribute('data-loading');
             });
         }
+      });
+    });
+  </script>
+
+  <script>
+    // Scroll-triggered fade-in animations
+    document.addEventListener('DOMContentLoaded', () => {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      // Observe all major sections
+      document.querySelectorAll('.about-section, .principles-section, .philosophy-section, .blog-posts-section, .contact-section').forEach(el => {
+        el.classList.add('fade-in-section');
+        observer.observe(el);
       });
     });
   </script>
